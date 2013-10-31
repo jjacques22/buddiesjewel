@@ -1,0 +1,243 @@
+#mainbj {
+	display: none;
+}
+#bj_colorpicker {
+	display: none;
+}
+#contentflow {
+	display: none;
+}
+
+
+
+#colpick_main {
+	width: 90%;
+	height: 90%;
+	background-color: #ff5465;
+}
+
+
+
+
+#contentflow_{
+  left:0px;
+  position:absolute;
+  top:0px;
+  z-index:2;
+
+  margin: 0 auto;
+  overflow:hidden;
+  width:400px;
+  height:400px;
+}
+
+#gallery{
+  position:relative;
+  margin: 0 auto;
+  overflow:hidden;
+  width:300px;
+  height:250px;
+}
+#slider{
+  position:absolute;
+  left:0;
+}
+#slider > div {
+ position:relative;
+ width:300px;
+ height:250px;
+ float:left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS for hdpi screens */
+@media screen and (-webkit-device-pixel-ratio: 1.5) {
+    #item1 {background-image:url(../img/drawable-hdpi/colorpick.png);}
+    #item2 {background-image:url(../img/drawable-hdpi/colorpick.png);}
+    #item3 {background-image:url(../img/drawable-hdpi/colorpick.png);}
+    #item4 {background-image:url(../img/drawable-hdpi/colorpick.png);}
+	
+	.item {
+    	height:99px;
+    	width:99px;
+    	display: inline-block; 
+    	position: fixed;	
+	}
+
+    .item1 {top: 18%;left: 18%;}
+    .item2 {top: 18%;left: 65%;}
+    .item3 {top: 65%;left: 18%;}
+    .item4 {top: 65%;left: 65%;}  
+}
+
+/* CSS for hdpi screens */
+@media screen and (-webkit-device-pixel-ratio: 1.0) {
+    #item1 {background-image:url(../img/drawable-mdpi/colorpick.png);}
+    #item2 {background-image:url(../img/drawable-mdpi/colorpick.png);}
+    #item3 {background-image:url(../img/drawable-mdpi/colorpick.png);}
+    #item4 {background-image:url(../img/drawable-mdpi/colorpick.png);}
+	
+	.item {
+    	height:66px;
+    	width:66px;
+    	display: inline-block; 
+    	position: fixed;	
+	}
+
+    .item1 {top: 18%;left: 18%;}
+    .item2 {top: 18%;left: 65%;}
+    .item3 {top: 65%;left: 18%;}
+    .item4 {top: 65%;left: 65%;}  
+}
+
+
+/* CSS for hdpi screens */
+@media screen and (-webkit-device-pixel-ratio: 2.0) {
+    #item1 {background-image:url(../img/drawable-xhdpi/colorpick.png);}
+    #item2 {background-image:url(../img/drawable-xhdpi/colorpick.png);}
+    #item3 {background-image:url(../img/drawable-xhdpi/colorpick.png);}
+    #item4 {background-image:url(../img/drawable-xhdpi/colorpick.png);}
+	
+	.item {
+    	height:132px; 
+    	width:132px;
+    	display: inline-block; 
+    	position: fixed;	
+	}
+
+    .item1 {top: 18%;left: 18%;}
+    .item2 {top: 18%;left: 65%;}
+    .item3 {top: 65%;left: 18%;}
+    .item4 {top: 65%;left: 65%;}  
+}
+
+
+
+
+
+
+
+
+
+
+
+.map_content {
+	height: 100%;
+}
+
+#map {
+	height: 690px;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.ui-content {
+	padding : 0;	
+}
+
+#tblheader {
+	border: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}
+.center {
+	text-align: center;
+}
+.hdtitle {
+	font-family: 'Changa One', cursive;
+	font-size:1em;
+}
+
+
+
+
+
+/* CSS for mdpi screens */
+@media screen and (-webkit-device-pixel-ratio: 1.0) {
+ 
+    #soleil {background-image:url(../img/meteo/choix/drawable-mdpi/soleil.png);}
+    #ensoleille {background-image:url(../img/meteo/choix/drawable-mdpi/ensoleille.png);}
+    #nuage {background-image:url(../img/meteo/choix/drawable-mdpi/nuage.png);}
+    #nuage_soleil_pluie {background-image:url(../img/meteo/choix/drawable-mdpi/nuage_soleil_pluie.png);}
+	#averse {background-image:url(../img/meteo/choix/drawable-mdpi/averse.png);}
+	#pluvieux {background-image:url(../img/meteo/choix/drawable-mdpi/pluvieux.png);}
+	#orage {background-image:url(../img/meteo/choix/drawable-mdpi/orage.png);}
+	#brouillard {background-image:url(../img/meteo/choix/drawable-mdpi/brouillard.png);}
+	#grele {background-image:url(../img/meteo/choix/drawable-mdpi/grele.png);}
+	#neige {background-image:url(../img/meteo/choix/drawable-mdpi/neige.png);}
+
+    .bm_meteo {
+    	height:52px;
+    	width:52px;
+    	display: inline-block;    	
+    }
+}
+
+/* CSS for hdpi screens */
+@media screen and (-webkit-device-pixel-ratio: 1.5) {
+    #soleil {background-image:url(../img/meteo/choix/drawable-hdpi/soleil.png);}
+    #ensoleille {background-image:url(../img/meteo/choix/drawable-hdpi/ensoleille.png);}
+    #nuage {background-image:url(../img/meteo/choix/drawable-hdpi/nuage.png);}
+    #nuage_soleil_pluie {background-image:url(../img/meteo/choix/drawable-hdpi/nuage_soleil_pluie.png);}
+	#averse {background-image:url(../img/meteo/choix/drawable-hdpi/averse.png);}
+	#pluvieux {background-image:url(../img/meteo/choix/drawable-hdpi/pluvieux.png);}
+	#orage {background-image:url(../img/meteo/choix/drawable-hdpi/orage.png);}
+	#brouillard {background-image:url(../img/meteo/choix/drawable-hdpi/brouillard.png);}
+	#grele {background-image:url(../img/meteo/choix/drawable-hdpi/grele.png);}
+	#neige {background-image:url(../img/meteo/choix/drawable-hdpi/neige.png);}
+
+    .bm_meteo {
+    	height:78px;
+    	width:78px;
+    	display: inline-block;    	
+    }
+}
+  
+ 
+/* CSS for xhdpi screens */
+@media screen and (-webkit-device-pixel-ratio: 2) {
+    #soleil {background-image:url(../img/meteo/choix/drawable-xhdpi/soleil.png);}
+    #ensoleille {background-image:url(../img/meteo/choix/drawable-xhdpi/ensoleille.png);}
+    #nuage {background-image:url(../img/meteo/choix/drawable-xhdpi/nuage.png);}
+    #nuage_soleil_pluie {background-image:url(../img/meteo/choix/drawable-xhdpi/nuage_soleil_pluie.png);}
+	#averse {background-image:url(../img/meteo/choix/drawable-xhdpi/averse.png);}
+	#pluvieux {background-image:url(../img/meteo/choix/drawable-xhdpi/pluvieux.png);}
+	#orage {background-image:url(../img/meteo/choix/drawable-xhdpi/orage.png);}
+	#brouillard {background-image:url(../img/meteo/choix/drawable-xhdpi/brouillard.png);}
+	#grele {background-image:url(../img/meteo/choix/drawable-xhdpi/grele.png);}
+	#neige {background-image:url(../img/meteo/choix/drawable-xhdpi/neige.png);}
+
+    .bm_meteo {
+    	height:104px;
+    	width:104px;
+    	display: inline-block;    	
+    }	
+}
+
+
+
+
+
+
+
+

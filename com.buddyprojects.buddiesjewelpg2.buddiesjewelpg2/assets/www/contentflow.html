@@ -1,0 +1,43 @@
+
+
+	<div class="swiper-container" id="JewelsLibraryz" >
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" >
+				<div>
+					<img src="img/emerald_mid.png" align="center" class="imgJewelz0" onclick="configureJewel(0)" >
+				</div>				
+				<div class="reflection"></div>
+			</div>		
+			<div class="swiper-slide"  >
+			    <img src="img/emerald_mid.png" align="center" class="imgJewelz1" onclick="configureJewel(1)">
+				<div class="reflection"></div>
+			</div>
+			<div class="swiper-slide" >
+			    <img src="img/emerald_mid.png" align="center" class="imgJewelz2"  onclick="configureJewel(2)">
+				<div class="reflection"></div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	var mySwiper = new Swiper('.swiper-container',{
+		slidesPerView: 3,
+		loop:true,
+		//Enable 3D Flow
+		tdFlow: {}
+		
+	})
+	</script>
+	
+
+	 
+	<script>
+	 
+	  var element = document.getElementById('JewelsLibraryz');
+	 
+	  element.onclick = function() {
+		  //alertCompliment();
+	  };
+	 
+	</script>
+	

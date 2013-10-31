@@ -1,0 +1,32 @@
+
+
+#jewel {
+  height:40%;
+  margin:0px auto;
+  width:40%;
+  position:relative;
+  
+}
+.imgJewelc {
+  left:0px;
+  position:absolute;
+  top:0px;
+  -webkit-animation-name: changeColor;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes changeColor {
+    0%,10% {
+        background-color: rgba(255,255,0,1);
+    }
+
+    50% {
+        background-color: rgba(0,0,0,0.4);
+    }
+    90%,100% {
+        background-color: rgba(0,0,255,0.4);;
+    }
+}

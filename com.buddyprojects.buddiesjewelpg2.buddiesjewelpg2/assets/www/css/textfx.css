@@ -1,0 +1,15 @@
+#container{
+	position:absolute;
+	top:25%;
+	left:50%;
+	margin:-9px 0 0 -95px
+}
+#container #text-fx {
+	font-family: 'Changa One', cursive;
+	font-size:32px;
+	line-height:48px
+}
+
+#container #text-fx>div {
+	position:relative
+}

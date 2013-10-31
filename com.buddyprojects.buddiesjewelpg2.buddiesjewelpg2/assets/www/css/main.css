@@ -1,0 +1,88 @@
+body {
+  font-family: 'Delius Swash Caps', cursive, Arial, sans-serif;
+  background: black;
+  color:white;
+  vertical-align:middle;
+  margin:0 auto;
+  padding:0;
+  border:0px solid red;
+  height:1000px;
+}
+
+body > section {
+  border:0px solid cyan; 
+  height:66%; 
+  padding: 1%;
+  min-width:660px;
+
+}
+
+footer, header {
+  text-align: center;
+  border:0px solid orange;
+//  height:160px;
+  height:17%;
+}
+
+div.icone {
+//  width:320px;
+  width:48.5%;
+  min-width:320px;
+
+  line-height: 320px;
+  height:320px;
+	
+  /*height:33%;*/
+
+  border:0px solid yellow;
+
+  position:relative;
+  float:left;
+
+  text-align:center;
+  vertical-align:middle;
+  margin:0 0 1% auto;
+
+  background: #333333;
+  
+  -webkit-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border-radius: 20px;
+}
+
+
+
+div#sep {
+  position:relative;
+  float:left;
+  height:320px;
+  width:1%;
+  background:black;
+  /*border-bottom:1px solid #313030;*/
+}
+
+
+div#clear {
+	clear:both;
+}
+
+
+.conteneur {
+  width:100%;
+  border:0px solid green;
+  height:66%;
+}
+
+section img {
+  width:280px;
+  height:280px;
+  vertical-align:middle;
+}
+
+section::after {
+  content: ".";
+  visibility: hidden;
+}
