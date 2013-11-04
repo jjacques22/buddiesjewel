@@ -1,13 +1,22 @@
-//function onDeviceReady() {
-//	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-//}
-
-// Global variables
-
-var Mylatitude = 0;
-var Mylongitude = 0;
+/*
+* Entry point for BuddiesJewel. Startappli will be called once device is ready
+*/
 
 
+
+//***************************************
+// GLOBAL DATAS
+//***************************************
+//Global array used to store buddycolors
+//TODO : set length dynamic.
+var objColorsArray = ["FF0000","00FF00","0000FF"];
+var colorForNFC = "0000FF"; //default value for the color to be sent by NFC
+
+
+var username="ce_bernard@yahoo.fr"; //Todo : set it dynamic using a profile page
+
+
+//Used for intro
 var introtitreFxSettings = {
 	animation : 9,
 	color : "#3F4C6B",
@@ -15,76 +24,21 @@ var introtitreFxSettings = {
 	speed : 1500
 };
 
-function start_appli() {
 
-	//$.mobile.changePage( "buddiesjewel.html", { transition: "pop"} );
-	
+//-------------------------------------------
+function start_appli() {
+// Entry point, called once device is ready
+//-------------------------------------------
 	$.mobile.allowCrossDomainPages = true; $.support.cors = true; $.mobile.phonegapNavigationEnabled = true;
 	$('#infolocation').hide();
 	$('#container').hide();
 	$('#mainbj').show();
-	//$('#contentflow').show();
-	
-
-
-    
-
-}
-
-
 
 	
-function parseTag(nfcEvent) {
-	var records = nfcEvent.tagData;
-
-	for (var i = 0; i < records.length; i++) {
-		var record = records[i],
-		p = document.createElement('p');
-		p.innerHTML = nfc.bytesToString(record.payload);
-		display.appendChild(p);
-	}
-}
-	
-function writeTag(nfcEvent) {
-	var mimeType = "buddy/text";
-	var payload = "super secret data";
-    console.log("writing nfc data:"+payload);	
-	var message = ndef.mimeMediaRecord(mimeType, nfc.stringToBytes(payload));
-
-	nfc.write(
-	  [message],
-	  function () {
-		console.log("success");
-	  },
-	  function (reason) {
-		console.log("fail");
-	  }
-	);
-}
-
-function colorpick_clicked() {
-	//$('#mainbj').hide();
-	//$.mobile.changePage( "#bj_colorpicker", { transition: "pop"} );
-	$('#bj_colorpicker').show();
-}
-
-function sendColor() {
-
-	var slider = document.getElementById('slider').value;
-	var d=document.getElementById('slider');
-	var box=d.children[0]; //TODO : retrieve index to change hard coded 0 dynamically
-	var color=box.style.backgroundColor;
-	console.log("Sending color via NFC:"+color+" TBC");	
-}
+	//Retrieve use colors from webserver: colors will be refreshed in jewels library once received
+	webGetColors(username);
 
 
-
-
-function checkFilled() {
-
-
-	var color=document.getElementById("sliderzzzz").style.backgroundColor;
-	console.log("XXXXXXXXXXXXXXXcolorxxxxxxxxxxxx:"+color);	
 }
 
 
@@ -93,19 +47,13 @@ function checkFilled() {
 
 
 
-// onSuccess Geolocation //
-function onSuccess(position) {
-	var element = document.getElementById('geolocation');
-	element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />'
-			+ 'Longitude: ' + position.coords.longitude + '<br />';
-	Mylatitude = position.coords.latitude;
-	Mylongitude = position.coords.longitude;
-	// drawMap();
-	$("#infolocation").hide("slow");
-}
 
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-	alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-}
+
+
+
+
+
+
+
+
+
