@@ -2,7 +2,7 @@
 * Entry point for BuddiesJewel. Startappli will be called once device is ready
 */
 
-
+var demo = true;
 
 //***************************************
 // GLOBAL DATAS
@@ -32,8 +32,8 @@ function start_appli() {
 	$.mobile.allowCrossDomainPages = true; $.support.cors = true; $.mobile.phonegapNavigationEnabled = true;
 	$('#infolocation').hide();
 	$('#container').hide();
-	$('#mainbj').show();
 
+	$('#mainbj').show();
 	
 	//Retrieve use colors from webserver: colors will be refreshed in jewels library once received
 	webGetColors(username);
