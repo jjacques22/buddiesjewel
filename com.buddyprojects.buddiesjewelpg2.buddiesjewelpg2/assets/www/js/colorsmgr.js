@@ -83,7 +83,8 @@ function createNewAnimForJewel(item,newAnim,newColor)
 	lastSheet.insertRule("@-webkit-keyframes " + newAnim + "{ 0%,10% { background-color: rgba("+newColorR+","+newColorG+","+newColorB+",1); } }", lastSheet.cssRules.length);
 	// find our newly created -webkit-keyframe rule
 	var keyframes = findKeyframesRule(newAnim);	
-	keyframes.insertRule("50% { background-color: rgba(0,0,0,0.4); }");		
+	//keyframes.insertRule("50% { background-color: rgba(0,0,0,0.4); }");		
+	keyframes.insertRule("50% { background-color: rgba("+newColorR+","+newColorG+","+newColorB+",0.5); }");
 	keyframes.insertRule("90%,100% { background-color: rgba("+newColorR+","+newColorG+","+newColorB+",1); }");		
 	
 	// assign the animation to our element (which will cause the animation to run)
