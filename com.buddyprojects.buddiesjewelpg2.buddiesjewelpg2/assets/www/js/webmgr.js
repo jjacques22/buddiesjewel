@@ -54,6 +54,18 @@ function getWeb(action, url) {
 					objColorsArray[0]=objColorsArrayl[0];
 					objColorsArray[1]=objColorsArrayl[1];
 					objColorsArray[2]=objColorsArrayl[2];
+					
+					
+					
+					//remove hugly characters " 
+					for (var i = 0; i < 3; i++) {
+					objColorsArray[i] = objColorsArray[i].replace('"', '');	
+					}						
+
+
+
+
+					
 					console.log(JSON.stringify(objloc.bj.Message));
 					console.log("objColorsArray:"+objColorsArray);
 					Toast.shortshow("Updating Jewel Library...");

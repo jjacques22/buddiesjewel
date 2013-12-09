@@ -70,12 +70,17 @@ function createNewAnimForJewel(item,newAnim,newColor)
 {	
 	
 
+	//remove hugly characters " 
+	console.log("zzzzzzzz newColor before:"+newColor);	
+	newColor = newColor.replace('"', '');
 	
-	
-	//Extract RGB values
+	//Extract RGB values	
+	console.log("setting color:"+newColor+" for "+newAnim+ ", item"+item);
 	var newColorR=parseInt(newColor.substring(0,2),16);
 	var newColorG=parseInt(newColor.substring(2,4),16);
 	var newColorB=parseInt(newColor.substring(4,6),16);	
+		
+
 	
 	
 	//Create the new rule
