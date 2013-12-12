@@ -6,8 +6,10 @@ function capturePhoto(){
 function updateNFCColor(index){
     var id="swatch"+index;
 	colorForNFC=document.getElementById(id).value;
+	colorForNFC = colorForNFC.replace('#', '');	
 	console.log("color selected for NFC transaction:"+colorForNFC);	
 	Toast.shortshow("Color selected:"+colorForNFC);
+	
 
 }
 
@@ -96,7 +98,7 @@ function pickColor() {
 			$("#swatch"+i).spectrum("set", '#' +colorHex);			
 		}	
 		//Select the first color by default for NFC
-		colorForNFC='#'+rgbToHex(colorArr[0][0],colorArr[0][1],colorArr[0][2]);
+		colorForNFC=rgbToHex(colorArr[0][0],colorArr[0][1],colorArr[0][2]);
 		console.log("colorForNFC selected by default: " + colorForNFC);
 		Toast.shortshow("Color selected:"+colorForNFC);
 		
