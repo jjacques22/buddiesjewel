@@ -8,6 +8,7 @@ License: MIT
 .sp-container {
     position:absolute;
     top:0;
+	width: 100%;
     left:0;
     display:inline-block;
     *display: inline;
@@ -301,7 +302,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 }
 .sp-picker-container
 {
-    width: 172px;
+    width: 80%;
     border-left: solid 1px #fff;
 }
 

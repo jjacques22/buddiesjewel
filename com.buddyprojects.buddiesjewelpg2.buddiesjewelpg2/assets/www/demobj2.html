@@ -35,18 +35,64 @@
 	<body onload="init();">
 
 		<h1>BuddiesJewel demo v0.0.3</h1>
-		<input type="button" id="takePictureBtn" onclick="takePic();" value="Take Picture">
+		<input type="button" id="takePictureBtn" onclick="takePic();" value="Take Picture" >
 		<input type="button" id="picPictureBtn" onclick="selectPic();" value="Select Picture">
+
 		
 		<img id="yourimage" onload="getSwatches();">
 
 		<div id="swatches">
-			<div id="swatch0" class="swatch"></div>
-			<div id="swatch1" class="swatch"></div>
-			<div id="swatch2" class="swatch"></div>
-			<div id="swatch3" class="swatch"></div>
-			<div id="swatch4" class="swatch"></div>
+		    <input id="swatch0" type='color' onchange="updateNFCColor(0);" >
+			<input id="swatch1" type='color' onchange="updateNFCColor(1);" >
+			<input id="swatch2" type='color' onchange="updateNFCColor(2);" >
+			<input id="swatch3" type='color' onchange="updateNFCColor(3);" >
+			<input id="swatch4" type='color' onchange="updateNFCColor(4);" >
 		</div>
+		
+		
+
+	<script type="text/javascript">
+		
+			$("#swatch0").spectrum({
+				color: "#00f",
+				clickoutFiresChange: true,
+				showInitial: true,				
+				showButtons: false
+			});
+			
+			$("#swatch1").spectrum({
+				color: "#00f",
+				clickoutFiresChange: true,
+				showInitial: true,				
+				showButtons: false
+
+			});
+
+			$("#swatch2").spectrum({
+				color: "#00f",
+				clickoutFiresChange: true,
+				showInitial: true,				
+				showButtons: false
+
+			});
+			
+			$("#swatch3").spectrum({
+				color: "#00f",
+				clickoutFiresChange: true,
+				showInitial: true,				
+				showButtons: false
+
+			});	
+
+			$("#swatch4").spectrum({
+				color: "#00f",
+				clickoutFiresChange: true,
+				showInitial: true,				
+				showButtons: false
+
+			});				
+	</script>
+		
 		
 	</body>
 

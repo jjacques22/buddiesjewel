@@ -1,9 +1,15 @@
 function capturePhoto(){
     navigator.camera.getPicture(uploadPhoto,onFail,{sourceType:1,quality:60});
-	//Toast.shortshow("Capture Photo...");
 }
 
 
+function updateNFCColor(index){
+    var id="swatch"+index;
+	colorForNFC=document.getElementById(id).value;
+	console.log("color selected for NFC transaction:"+colorForNFC);	
+	Toast.shortshow("Color selected:"+colorForNFC);
+
+}
 
 
 function uploadPhoto(data){
@@ -76,34 +82,27 @@ function pickColor() {
 
 
 	var desiredWidth;
+	var desiredHeight;
 	function picFail(e) {
 		navigator.notification.alert("Sorry, we failed...");
 	}
 
 	function getSwatches(){
 		var colorArr = createPalette($("#yourimage"), 5);
-		for (var i = 0; i < Math.min(5, colorArr.length); i++) {
-			$("#swatch"+i).css("background-color","rgb("+colorArr[i][0]+","+colorArr[i][1]+","+colorArr[i][2]+")");
-			console.log($("#swatch"+i).css("background-color"));
-		}
+		//Update input colors
+		for (var i = 0; i < Math.min(5, colorArr.length); i++) {			
+			colorHex=rgbToHex(colorArr[i][0],colorArr[i][1],colorArr[i][2]);
+			console.log("extracted colorHex:"+colorHex+"from "+i); 
+			$("#swatch"+i).spectrum("set", '#' +colorHex);			
+		}	
+		//Select the first color by default for NFC
+		colorForNFC='#'+rgbToHex(colorArr[0][0],colorArr[0][1],colorArr[0][2]);
+		console.log("colorForNFC selected by default: " + colorForNFC);
+		Toast.shortshow("Color selected:"+colorForNFC);
+		
+
 	}	
 	
-	function getSwatches2(){
-		var DominantColor = getDominantColor($("#yourimage"));
-		console.log("DominantColorzzzzzzzzz:"+DominantColor.r);
-		
-		//console.log("DominantColor:"+ DominantColor[0] + DominantColor[1]+ DominantColor[2]);
-		//alert('DominantColor: ' + DominantColor[0] + DominantColor[1]+ DominantColor[2]);
-		r = DominantColor.r.toString(16);
-		g = DominantColor.g.toString(16);
-		b = DominantColor.b.toString(16);
-		DominantColorzz=""+r+g+b;
-
-		alert('DominantColorzz: ' + DominantColorzz);		
-		
-
-		
-	}
 	
 
 
@@ -114,11 +113,11 @@ function pickColor() {
 	}
 	
 	function takePic(e){
-		navigator.camera.getPicture(picSuccess, picFail, {quality:75, targetWidth:desiredWidth, targetHeight:desiredWidth, sourceType:Camera.PictureSourceType.CAMERA, destinationType:Camera.DestinationType.FILE_URI});
+		navigator.camera.getPicture(picSuccess, picFail, {quality:75, targetWidth:desiredWidth, targetHeight:desiredHeight, sourceType:Camera.PictureSourceType.CAMERA, destinationType:Camera.DestinationType.FILE_URI});
 	}
 
 	function selectPic(e) {
-		navigator.camera.getPicture(picSuccess, picFail, {quality:75, targetWidth:desiredWidth, targetHeight:desiredWidth, sourceType:Camera.PictureSourceType.PHOTOLIBRARY, destinationType:Camera.DestinationType.FILE_URI});
+		navigator.camera.getPicture(picSuccess, picFail, {quality:75, targetWidth:desiredWidth, targetHeight:desiredHeight, sourceType:Camera.PictureSourceType.PHOTOLIBRARY, destinationType:Camera.DestinationType.FILE_URI});
 	}
 	
 	
@@ -127,6 +126,10 @@ function pickColor() {
 		$("#picPictureBtn").click(selectPic);
 		$("#yourimage").load(getSwatches);
 		desiredWidth = window.innerWidth;
+		desiredHeight = (window.innerHeight)/2;
+		a=rgbToHex(2,56,255);
+		alert('rgbToHex: ' + a);	
+		
 		
 	};
 	
@@ -143,3 +146,18 @@ function pickColor() {
 
 
 
+   // `rgbToHex`
+    // Converts an RGB color to hex
+    // Assumes r, g, and b are contained in the set [0, 255]
+    // Returns a 6 character hex
+    function rgbToHex(r, g, b) {
+
+        var hex = [
+            r.toString(16),
+            g.toString(16),
+            b.toString(16)
+        ];
+
+
+        return hex.join("");
+    }
