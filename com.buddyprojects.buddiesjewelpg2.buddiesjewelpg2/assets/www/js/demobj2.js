@@ -7,11 +7,38 @@ function updateNFCColor(index){
     var id="swatch"+index;
 	colorForNFC=document.getElementById(id).value;
 	colorForNFC = colorForNFC.replace('#', '');	
-	console.log("color selected for NFC transaction:"+colorForNFC);	
-	Toast.shortshow("Color selected:"+colorForNFC);
+	console.log("Selected Color for NFC transaction:"+colorForNFC);	
+	Toast.shortshow("Selected color :"+colorForNFC);
+	if(switchOffJewel=="true")
+	{
+	  console.log("Force ON Mode");
+	  toggleOnOff();
+	}	
+
 	
 
 }
+
+
+function toggleOnOff(){
+	console.log("toggleOnOff");	
+	var button = document.getElementById('button');
+
+	$(button).toggleClass('on');
+	//Retrieve light color to know wether we are in ON position or OFF position
+	  if ($(button).hasClass('on')) {
+		 //Jewel in ON position
+		 switchOffJewel="false";
+	  } else {
+		 //Jewel in OFF position
+		 switchOffJewel="true";
+		}	
+
+
+	
+
+}
+
 
 
 function uploadPhoto(data){
@@ -100,7 +127,13 @@ function pickColor() {
 		//Select the first color by default for NFC
 		colorForNFC=rgbToHex(colorArr[0][0],colorArr[0][1],colorArr[0][2]);
 		console.log("colorForNFC selected by default: " + colorForNFC);
-		Toast.shortshow("Color selected:"+colorForNFC);
+		Toast.shortshow("Selected color:"+colorForNFC);
+		if(switchOffJewel=="true")
+		{
+		  console.log("Force ON Mode");
+		  toggleOnOff();
+		}			
+
 		
 
 	}	

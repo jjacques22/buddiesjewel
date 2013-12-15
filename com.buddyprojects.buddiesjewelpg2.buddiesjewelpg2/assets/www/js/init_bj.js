@@ -11,7 +11,7 @@ var demo = true;
 //TODO : set length dynamic.
 var objColorsArray = ["FF0000","00FF00","0000FF"];
 var colorForNFC = "0000FF"; //default value for the color to be sent by NFC
-
+var switchOffJewel = "true"; //indicate wether 000000 color shall be sent or colorForNFC color 
 
 var username="ce_bernard@yahoo.fr"; //Todo : set it dynamic using a profile page
 

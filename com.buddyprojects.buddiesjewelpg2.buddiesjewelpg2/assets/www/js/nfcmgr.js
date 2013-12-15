@@ -50,7 +50,19 @@ function nfcUpdateColor() {
 // Triggered when an nfc tag is detected
 //-------------------------------------------	
 		
-	var colorhex = colorForNFC; //retrieve color to be sent from global data
+	
+	var colorhex;  
+	if(switchOffJewel=="true")
+	{
+	  console.log("Sleep Mode enabled");
+	  colorhex = "000000";
+	}
+	else
+	{
+	  console.log("Sleep Mode disabled");	
+	  //retrieve color to be sent from global data
+	  colorhex = colorForNFC;
+	}
 	console.log("Sending color via NFC:"+colorhex);
 
 	var colorhexwithalpha = "ff"+colorhex;

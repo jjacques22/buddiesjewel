@@ -34,7 +34,7 @@
 
 	<body onload="init();">
 
-		<h1>BuddiesJewel demo v0.0.4</h1>
+		<h1>BuddiesJewel demo v0.0.5</h1>
 		<input type="button" id="takePictureBtn" onclick="takePic();" value="Take Picture" >
 		<input type="button" id="picPictureBtn" onclick="selectPic();" value="Select Picture">
 
@@ -49,8 +49,12 @@
 			<input id="swatch4" type='color' onchange="updateNFCColor(4);" >
 		</div>
 		
-		
+		  
+			<a rel="external" href="#button" class="onoffButton"  id="button" onclick="toggleOnOff()">&#xF011;</a>  
+			<span class="onoffButtonLight"  id="light"></span>  
+		 
 
+	
 	<script type="text/javascript">
 		
 			$("#swatch0").spectrum({
@@ -90,7 +94,9 @@
 				showInitial: true,				
 				showButtons: false
 
-			});				
+			});	
+
+		
 	</script>
 		
 		
